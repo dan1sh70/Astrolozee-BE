@@ -2,6 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/connectdb.js";
 import authRoutes from "./routes/authRoutes.js";
+import astroRoutes from "./routes/astroRoutes.js";
+import kundliRoutes from "./routes/kundliRoutes.js"
 import cookieParser from "cookie-parser";
 import cors from "cors"
 
@@ -26,6 +28,8 @@ app.use(
 
 
 app.use("/api/auth",authRoutes);
+app.use("/api/astro",astroRoutes);
+app.use("/api/kundli",kundliRoutes)
 
 
 app.listen (PORT,() => {
