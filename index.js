@@ -32,8 +32,7 @@ app.use("/api/astro",astroRoutes);
 app.use("/api/kundli",kundliRoutes)
 
 
-app.listen (PORT,() => {
-    console.log(`Server is running on port ${PORT}`);
-})
+export default app;
+
 
 
