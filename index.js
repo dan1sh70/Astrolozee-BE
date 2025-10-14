@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://astrolozee-frontend.vercel.app", // frontend Vite URL
+    origin: "*", // frontend Vite URL
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
