@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class AstroRagService {
   constructor() {
-    this.baseURL = process.env.ASTRO_API_URL || 'https://astrolozee.onrender.com';
+    this.baseURL = process.env.ASTRO_API_URL || 'https://astrolozee-ai.onrender.com';
     this.apiKey = process.env.ASTRO_API_KEY || 'supersecret@123A$trolzee';
     
     if (!this.apiKey) {
