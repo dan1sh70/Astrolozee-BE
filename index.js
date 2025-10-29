@@ -14,7 +14,7 @@ connectDB();
 
 const PORT = process.env.PORT || 5000;
 
-// CORS configuration - MUST be first middleware
+// CORS config
 const corsOptions = {
   origin: "https://astroloze.vercel.app",
   credentials: true,
@@ -25,25 +25,24 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Parse request bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Health check endpoint
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Backend is running" });
 });
 
-// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/astro", astroRoutes);
 app.use("/api/kundli", kundliRoutes);
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: err.message });
 });
 
-export default app;
+// ✅ Start server here
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
