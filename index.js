@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS config
 const corsOptions = {
-  origin: "https://astroloze.vercel.app",
+  origin: "https://astrolozee-red.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
